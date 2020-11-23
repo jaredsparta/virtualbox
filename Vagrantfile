@@ -7,6 +7,13 @@
 # you're doing.
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "ubuntu/focal64"
-
+  config.vm.box = "ubuntu/bionic64"
+  config.vm.network "private_network", ip: "192.168.10.2"
+  # This creates a webpage on the ip address using your server
+  
+  # Search how to add a host that will allow one to go to a normal link
+  # eg instead of <ipaddress> type in www.development.local to go to the same page 
+  # This uses the hosts-updater plugin
+  config.vm.hostname =  "www.development.local"
+  
 end
